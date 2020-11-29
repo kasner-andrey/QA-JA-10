@@ -7,11 +7,11 @@ public class Task04 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter two-digit natural number: ");
         int twoDigitNumber = scanner.nextInt();
-//Вроде Math.round все спас! )))
+//сделал тоже но без Math.round ))
         if (twoDigitNumber > 9 && twoDigitNumber < 100){
             double doubleNumber = twoDigitNumber;
             int firstDigit = (int) (doubleNumber / 10);
-            int secondDigit = (int) Math.round(((doubleNumber / 10) - firstDigit) * 10);
+            int secondDigit = (int) (doubleNumber - firstDigit * 10);
             System.out.println("n = " + firstDigit + secondDigit);
             System.out.println("sum = " + (firstDigit + secondDigit));
 
