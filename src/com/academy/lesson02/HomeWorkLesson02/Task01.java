@@ -10,7 +10,7 @@ public class Task01 {
         double numberThird;
         System.out.println("After entered 3 numbers, the program displayed min, max and average value.");
 
-        //Программа воспринимает дробные числа только которые написаны через "," если через точку "." то выдает ошибку.
+        //РџСЂРѕРіСЂР°РјРјР° РІРѕСЃРїСЂРёРЅРёРјР°РµС‚ РґСЂРѕР±РЅС‹Рµ С‡РёСЃР»Р° С‚РѕР»СЊРєРѕ РєРѕС‚РѕСЂС‹Рµ РЅР°РїРёСЃР°РЅС‹ С‡РµСЂРµР· "," РµСЃР»Рё С‡РµСЂРµР· С‚РѕС‡РєСѓ "." С‚Рѕ РІС‹РґР°РµС‚ РѕС€РёР±РєСѓ.
 
             System.out.print("Entered First argument: ");
             numberFirst = scanner.nextDouble();
