@@ -1,7 +1,9 @@
 package com.academy.lesson02.HomeWorkLesson02;
 
+import java.text.Format;
 import java.util.Scanner;
-
+//Написать программу ввода с клавиатуры последовательно 3 чисел. Вывести
+//		минимальное максимальное и средние значения
 public class Task01 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -9,8 +11,6 @@ public class Task01 {
         double numberSecond;
         double numberThird;
         System.out.println("After entered 3 numbers, the program displayed min, max and average value.");
-
-        //Программа воспринимает дробные числа только которые написаны через "," если через точку "." то выдает ошибку.
 
             System.out.print("Entered First argument: ");
             numberFirst = scanner.nextDouble();
@@ -54,5 +54,26 @@ public class Task01 {
             } else if (numberThird == numberSecond && numberThird < numberFirst) {
                 System.out.println("Numbers equal " + numberThird + " = " + numberSecond);
             }
+// решение без перебора
+        System.out.println("********************************************************");
+            double[] array = new double[]{numberFirst, numberSecond, numberThird};
+            double min = array[0];
+            double max = 0;
+            double average = 0;
+            for(int i = 0; i < array.length; i++){
+                if(array[i] > max){
+                    max = array[i];
+                }else if(array[i] < min){
+                    min = array[i];
+                }else{
+                    average = array[i];
+                }
+            }
+        System.out.println(String.format("number max = %.0f; number min = %.0f; average = %.0f;", max, min, average));
+
+
+
    }
+
+
 }
