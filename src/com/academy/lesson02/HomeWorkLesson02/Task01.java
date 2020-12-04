@@ -66,8 +66,6 @@ public class Task01 {
                 }else if(array[i] < min){
                     average = min;
                     min = array[i];
-                }else{
-                    average = array[i];
                 }
             }
         System.out.println(String.format("number max = %.0f; number min = %.0f; average = %.0f;", max, min, average));
