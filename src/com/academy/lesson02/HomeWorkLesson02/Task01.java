@@ -64,6 +64,7 @@ public class Task01 {
                 if(array[i] > max){
                     max = array[i];
                 }else if(array[i] < min){
+                    average = min;
                     min = array[i];
                 }else{
                     average = array[i];
