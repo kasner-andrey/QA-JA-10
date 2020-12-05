@@ -10,12 +10,8 @@ public class Method {
 //        int sum2 = sum(9, 4);
 //        System.out.println(sum);
 //        System.out.println(sum2);
-       reverseNumbers(32, 56, 74, 47, 985, 7767);
-       rNumbers(23, 5657, 767);
-
-
-
-
+//       reverseNumbers(32, 56, 74, 47, 985, 7767);
+//       rNumbers(23, 5657, 767);
 
     }
 
