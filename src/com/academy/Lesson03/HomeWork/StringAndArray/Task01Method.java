@@ -14,7 +14,7 @@ public class Task01Method {
     }
 
     public static int OutputWordsD(String str){
-        System.out.println(str);
+        System.out.println("source string: \'" + str + "\'");
         System.out.println();
         int numberOfWords = 0;
         int num = 0;
