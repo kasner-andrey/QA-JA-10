@@ -1,6 +1,9 @@
 package com.academy.Lesson03.HomeWork.StringAndArray;
 
-import org.jetbrains.annotations.NotNull;
+//1) Напишите программу, которая:
+//	- считывает строку
+//	- выводит исходную строку
+//	- выводит количество и список слов, которые начинаются на букву 'd'
 
 public class Task01Method {
 
@@ -11,7 +14,8 @@ public class Task01Method {
     }
 
     public static int OutputWordsD(String str){
-        Task01Method.str = str;
+        System.out.println(str);
+        System.out.println();
         int numberOfWords = 0;
         int num = 0;
         System.out.println("Words starting with \"d\":" );
