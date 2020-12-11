@@ -97,13 +97,13 @@ public class PersonMain {
 
  //****************************************************** Вывод данных массива ***********************************************************
         System.out.println("********* Random Abonents ************");
+        int i = 1;
         for (Person item : personsArray) {
             firstName = item.getFirstName();
             lastName = item.getLastName();
             age = item.getAge();
             gender = item.getGender();
-            int i = 1;
-            System.out.println("******** Abonent " + (i+1) + " **************");
+            System.out.println("******** Abonent " + (i) + " **************");
             System.out.println("Firstname: " + firstName);
             System.out.println("Lastname: " + lastName);
             System.out.println("Age: " + age);
@@ -114,6 +114,7 @@ public class PersonMain {
 
 
         //****************************************************** Отбор: Женщины 30 - 40 лет ***********************************************************
+        System.out.println("-----------------------------------------------------");
         System.out.println("******* Female 30 - 40 age *********");
         for (Person value : personsArray) {
             firstName = value.getFirstName();
