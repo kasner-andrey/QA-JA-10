@@ -102,11 +102,13 @@ public class PersonMain {
             lastName = item.getLastName();
             age = item.getAge();
             gender = item.getGender();
-//            System.out.println("******** Abonent " + (i+1) + " **************");
-//            System.out.println("Firstname: " + firstName);
-//            System.out.println("Lastname: " + lastName);
-//            System.out.println("Age: " + age);
-//            System.out.println("Gender: " + gender);
+            int i = 1;
+            System.out.println("******** Abonent " + (i+1) + " **************");
+            System.out.println("Firstname: " + firstName);
+            System.out.println("Lastname: " + lastName);
+            System.out.println("Age: " + age);
+            System.out.println("Gender: " + gender);
+            i++;
         }
 
 
