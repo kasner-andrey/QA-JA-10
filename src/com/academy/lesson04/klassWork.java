@@ -62,6 +62,7 @@ public class klassWork {
         System.out.println(world);
         String onlyWord = hello.substring(6, 11);// от 6 до 10 11 не включается
         System.out.println(onlyWord);
+        int i = hello.lastIndexOf("_");
 
         System.out.println("***************************************");
 
@@ -138,7 +139,7 @@ public class klassWork {
         int str9 = 0;
         int q = 0;
 
-        for (int i = 0; i < str.length(); i++){
+        for (int ir = 0; i < str.length(); ir++){
             str9 = str.indexOf( "cd", k) ;
 //System.out.println(k + "*");
 //            System.out.println(str2 + "__");
