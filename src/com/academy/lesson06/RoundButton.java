@@ -1,6 +1,10 @@
 package com.academy.lesson06;
 
 public class RoundButton extends Button {
+    public RoundButton(int xPosition, int yPosition, int width, int height, String text) {
+        super(xPosition, yPosition, width, height, text);
+    }
+
     @Override
     public void draw() {
         super.draw();
