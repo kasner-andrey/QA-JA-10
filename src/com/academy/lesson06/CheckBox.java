@@ -3,6 +3,9 @@ package com.academy.lesson06;
 public class CheckBox extends Button {
     protected Boolean checked;
 
+    public CheckBox(int xPosition, int yPosition, int width, int height, String text) {
+        super(xPosition, yPosition, width, height, text);
+    }
 
 
     @Override
