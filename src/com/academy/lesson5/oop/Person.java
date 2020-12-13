@@ -24,8 +24,8 @@ package com.academy.lesson5.oop;
 
 public class Person {
     private String firstName;
-    private  String lastName;
-    private  int age;
+    private    String lastName;
+    private    int age;
     private char gender;
 
     //constructor
