@@ -42,6 +42,9 @@ public class CustomDate {
         }
     }
 
+    public CustomDate() {
+    }
+
     public static boolean validate(int day, int month, int year){
         String date;
         if(day < 10 && month > 9){ date = "0" + day + "." + month + "." + year;}
