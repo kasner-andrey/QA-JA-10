@@ -24,8 +24,8 @@ package com.academy.lesson5.oop;
 
 public class Person {
     private String firstName;
-    private    String lastName;
-    private    int age;
+    private String lastName;
+    private int age;
     private char gender;
 
     //constructor
@@ -41,7 +41,7 @@ public class Person {
     }
     //methods
     public String getProfile(){
-        String personInfo = this.firstName + " " + this.lastName + " " + this.age + " " + this.gender;
+        String personInfo = this.firstName + "\n" + this.lastName + "\n" + this.age + "\n" + this.gender;
         return (personInfo);
 
     }
