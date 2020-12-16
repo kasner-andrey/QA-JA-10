@@ -27,22 +27,23 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CustomDate {
-    private static int day = 1;
-    private static int month = 1;
-    private static int year = 1999;
+    private int day = 1;
+    private int month = 1;
+    private int year = 1999;
     private static boolean flagValidation = false;
+
 
 //Constructor
     public  CustomDate(int day, int month, int year) {
         if(validate(day, month, year)){
-            CustomDate.day = day;
-            CustomDate.month = month;
-            CustomDate.year = year;
+            this.day = day;
+            this.month = month;
+            this.year = year;
         }
     }
 
     public static boolean validate(int day, int month, int year){
-        String date ="";
+        String date;
         if(day < 10 && month > 9){ date = "0" + day + "." + month + "." + year;}
         if(month < 10 && day < 10){ date = "0" + day + ".0" + month + "." + year;}
         else if(day > 9 && month < 10){ date = day + ".0" + month + "." + year;}
@@ -56,7 +57,7 @@ public class CustomDate {
             System.out.println("Validate: Ошибка в дате!");
             return false;
         }
-        flagValidation = true;
+        CustomDate.flagValidation = true;
         return  true;
     }
 
@@ -114,19 +115,19 @@ public class CustomDate {
 
     public void setDay(int day){
         if(validate(day, month, year)){
-            CustomDate.day = day;
+            this.day = day;
         } else System.out.println("Не правильный день!");
     }
 
     public void setMonth(int month) {
         if(validate(day, month, year)){
-            CustomDate.month = month;
+            this.month = month;
         } else System.out.println("Не правильный месяц!");
     }
 
     public void setYear(int year) {
         if(validate(day, month, year)){
-            CustomDate.year = year;
+            this.year = year;
         } else System.out.println("Не правильный год!");
     }
 }
