@@ -64,7 +64,8 @@ public class PersonMain {
 
     public static void main(String[] args) {
 
-//*********************************************** Ñîçäàíèÿ ìàññèâà ğàíäîìíûõ ïîëüçîâàòåëåé 99 ÷åëîâåê (Íî ìîæíî ñêîëüêî óãîäíî ïîëüçîâàòåëåé) ***********************************
+//***************************** Ñîçäàíèÿ ìàññèâà ğàíäîìíûõ ïîëüçîâàòåëåé 99 ÷åëîâåê *****
+// **************************** (Íî ìîæíî ñêîëüêî óãîäíî ïîëüçîâàòåëåé) *****************
 
         Person person = new Person();
         System.out.println();
@@ -93,9 +94,9 @@ public class PersonMain {
             //System.out.print(" " + personsArray[i] + " "); // Íå îòîáğàæàåòñÿ
         }
         //System.out.println(Arrays.toString(personsArray)); // Íå îòîáğàæàåòñÿ
- //*********************************************************************************************************************************************
+ //*********************************************************************************************
 
- //****************************************************** Âûâîä äàííûõ ìàññèâà ***********************************************************
+ //************************** Âûâîä äàííûõ ìàññèâà ******************
         System.out.println("********* Random Abonents ************");
         int i = 1;
         for (Person item : personsArray) {
@@ -104,6 +105,8 @@ public class PersonMain {
             age = item.getAge();
             gender = item.getGender();
             System.out.println("******** Abonent " + (i) + " **************");
+//            System.out.println(item.getProfile());
+//            System.out.println("--------------------------------");
             System.out.println("Firstname: " + firstName);
             System.out.println("Lastname: " + lastName);
             System.out.println("Age: " + age);
@@ -111,7 +114,7 @@ public class PersonMain {
             i++;
         }
 
-        //****************************************************** Îòáîğ: Æåíùèíû 30 - 40 ëåò ***********************************************************
+//***************** Îòáîğ: Æåíùèíû 30 - 40 ëåò *****************************************
         System.out.println("-----------------------------------------------------");
         System.out.println("******* Female 30 - 40 age *********");
         for (Person value : personsArray) {
@@ -121,6 +124,8 @@ public class PersonMain {
             gender = value.getGender();
             if (gender == 'f' && age >= 30 && age <= 40) {
                 System.out.println("******** Abonent **************");
+//                System.out.println(value.getProfile());
+//                System.out.println("-------------------------------");
                 System.out.println("Firstname: " + firstName);
                 System.out.println("Lastname: " + lastName);
                 System.out.println("Age: " + age);
