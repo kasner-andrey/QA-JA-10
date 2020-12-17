@@ -49,6 +49,10 @@ package com.academy.lesson04.HomeWorkOOPQvests;
 //        - все методы next...()
 //        - validate()
 
+import com.academy.lesson5.oop.Date.CustomDate1;
+import com.academy.lesson5.oop.Date.CustomDateTime1;
+import com.academy.lesson5.oop.Date.CustomDateTimeExt1;
+
 import java.text.ParseException;
 
 public class CustomDateTimeMain {
@@ -110,6 +114,14 @@ public class CustomDateTimeMain {
         CustomDate date11 = new CustomDate(2, 9, 1998);
         System.out.println("equals() true: " + date9.equals(date10));
         System.out.println("equals() false: " + date9.equals(date11));
+
+        System.out.println("***************** Constructor по умолчанию *************************");
+        CustomDateTimeExt date13 = new CustomDateTimeExt();
+        System.out.println("CustomDateTimeExt: " + date13);
+        CustomDateTime date14 = new CustomDateTime();
+        System.out.println("CustomDateTime: " + date14);
+        CustomDate date15 = new CustomDate();
+        System.out.println("CustomDate: " + date15);
 
 
 
