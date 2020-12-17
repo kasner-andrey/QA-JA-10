@@ -25,6 +25,7 @@ package com.academy.lesson04.HomeWorkOOPQvests;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public class CustomDate {
     private int day = 1;
@@ -57,7 +58,7 @@ public class CustomDate {
             formatDate.setLenient(false);
             date1 = formatDate.parse(date);
         } catch (Exception e) {
-            System.out.println("Validate: Ошибка в дате!");
+            System.out.println("CustomDate.validate: Ошибка в дате!");
             return false;
         }
         CustomDate.flagValidation = true;
@@ -73,7 +74,7 @@ public class CustomDate {
             String dateYear = formatDate.format(dateParse);
             String weekDay = formatWeek.format(dateParse);
             return dateYear + " " + weekDay;
-        } else return "Не правильная дата getFormattedDate.";
+        } else return "CustomDate.getFormattedDate: Не правильная дата.";
     }
 
     public static String dayOfWeek(int day, int month, int year) throws ParseException {
@@ -83,7 +84,7 @@ public class CustomDate {
             SimpleDateFormat formatWeek = new SimpleDateFormat("EEEE");
             Date dateParse = formatDate.parse(date);
             return formatWeek.format(dateParse);
-        } else return "Не павильная дата dayOfWeek.";
+        } else return "CustomDate.dayOfWeek: Не павильная дата.";
     }
 //Getters
 
@@ -93,7 +94,7 @@ public class CustomDate {
             SimpleDateFormat day = new SimpleDateFormat("dd");
             Date dayParse = day.parse(date);
             return day.format(dayParse);
-        } else return "Не правильная дата getDay.";
+        } else return "CustomDate.getDay: Не правильная дата.";
     }
 
     public String getMonth() throws ParseException {
@@ -102,7 +103,7 @@ public class CustomDate {
             SimpleDateFormat month = new SimpleDateFormat("MM");
             Date monthParse = month.parse(date);
             return month.format(monthParse);
-        } else return "Не правильная дата getMonth.";
+        } else return "CustomDate.getMonth: Не правильная дата.";
     }
 
     public String getYear() throws ParseException {
@@ -111,7 +112,7 @@ public class CustomDate {
             SimpleDateFormat year = new SimpleDateFormat("yyyy");
             Date yearParse = year.parse(date);
             return year.format(yearParse);
-        } else return "Не правильная дата getYear.";
+        } else return "CustomDate.getYear: Не правильная дата.";
     }
 
 //Setters
@@ -119,18 +120,40 @@ public class CustomDate {
     public void setDay(int day){
         if(validate(day, month, year)){
             this.day = day;
-        } else System.out.println("Не правильный день!");
+        } else System.out.println("CustomDate.setDay: Не правильный день!");
     }
 
     public void setMonth(int month) {
         if(validate(day, month, year)){
             this.month = month;
-        } else System.out.println("Не правильный месяц!");
+        } else System.out.println("CustomDate.setMonth: Не правильный месяц!");
     }
 
     public void setYear(int year) {
         if(validate(day, month, year)){
             this.year = year;
-        } else System.out.println("Не правильный год!");
+        } else System.out.println("CustomDate.setYear: Не правильный год!");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CustomDate that = (CustomDate) o;
+        return day == that.day && month == that.month && year == that.year;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(day, month, year);
+    }
+
+    @Override
+    public String toString() {
+        return "CustomDate{" +
+                "day=" + day +
+                ", month=" + month +
+                ", year=" + year +
+                '}';
     }
 }
