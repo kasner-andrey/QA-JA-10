@@ -150,10 +150,12 @@ public class CustomDate {
 
     @Override
     public String toString() {
-        return "CustomDate{" +
-                "day=" + day +
-                ", month=" + month +
-                ", year=" + year +
-                '}';
+        String formattedDate = null;
+        try {
+            formattedDate = getFormattedDate();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return formattedDate;
     }
 }

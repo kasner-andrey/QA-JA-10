@@ -71,8 +71,12 @@ public class CustomDateTimeExt extends CustomDateTime{
 
     @Override
     public String toString() {
-        return "CustomDateTimeExt{" +
-                "ms=" + ms +
-                '}';
+        String formattedDate = null;
+        try {
+            formattedDate = getFormattedDate();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return formattedDate;
     }
 }
