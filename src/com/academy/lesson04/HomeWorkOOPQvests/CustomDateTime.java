@@ -51,7 +51,9 @@ public class CustomDateTime extends CustomDate{
     private int hour = 0;
     private int minute = 0;
     private int second = 0;
-    private static boolean flagValidation = false;
+    private static boolean flagValidation = false; //Валидна ли созданная дата для методов вывода данных или изменения данных
+    // когда мы создаем новый класс с данными (они не валидны) и сразу выводим или меняем значение в нем, выводится сообщение где произошла ошибка
+    // если класс был создан с валидными данными, то флаг становится true и вывод или изменения происходят с текущими валидными значениями класса.
 
     public CustomDateTime(){
         super();
@@ -82,7 +84,7 @@ public class CustomDateTime extends CustomDate{
             Date timeParse = formatTime.parse(time);
             String timeString = formatTime.format(timeParse);
             return super.getFormattedDate() + " " + timeString;
-        } else  return "getFormattedDate: Не верное время";
+        } else  return "CustomDateTime.getFormattedDate: Не верное время";
     }
 
     public static boolean validate(int hour, int minute, int second){
@@ -93,7 +95,7 @@ public class CustomDateTime extends CustomDate{
             formatTime.setLenient(false);
             date = formatTime.parse(time);
         } catch (Exception e) {
-            System.out.println("Validate: Ошибка во времени!");
+            System.out.println("CustomDateTime.validate: Ошибка во времени!");
             return false;
         }
         CustomDateTime.flagValidation = true;
@@ -112,7 +114,7 @@ public class CustomDateTime extends CustomDate{
             Date timeParse = formatParseTime.parse(time);
             String timeString = formatTime.format(timeParse);
             return super.getFormattedDate() + " " + timeString;
-        } else  return "getFormattedDate(boolean isTimeFormat12): Не верное время";
+        } else  return "CustomDateTime.getFormattedDate(boolean isTimeFormat12): Не верное время";
     }
 
     public void nextSecond() throws ParseException {
@@ -156,7 +158,7 @@ public class CustomDateTime extends CustomDate{
                  }
              }
         }
-
+// вспомогательный метод для методов next...()
     public void nextDate(int day) throws ParseException {
         int nextDay = Integer.parseInt(super.getDay()) + day;
         String date = nextDay + "." + super.getMonth() + "." + super.getYear();
@@ -185,50 +187,50 @@ public class CustomDateTime extends CustomDate{
         setHour(Integer.parseInt(timeString.substring(timeString.length() - 8, timeString.length() - 6)));
     }
 
-    //Getters
+//Getters
     public String getHour() throws ParseException {
         if(flagValidation){
-            String time = hour + "";
+            String time = Integer.toString(hour);
             SimpleDateFormat timeHour = new SimpleDateFormat("HH");
             Date timeParse = timeHour.parse(time);
             return timeHour.format(timeParse);
-        } else return "Не правильный час getHour.";
+        } else return "CustomDateTime.getHour : Не правильный час.";
     }
 
     public String getMinute() throws ParseException {
         if(flagValidation){
-            String time = minute + "";
+            String time = Integer.toString(minute);
             SimpleDateFormat timeMinute = new SimpleDateFormat("mm");
             Date timeParse = timeMinute.parse(time);
             return timeMinute.format(timeParse);
-        } else return "Не правильные минуты getMinute.";
+        } else return "CustomDateTime.getMinute: Не правильные минуты.";
     }
 
     public String getSecond() throws ParseException {
         if(flagValidation){
-            String time = second + "";
+            String time = Integer.toString(second);
             SimpleDateFormat timeSecond = new SimpleDateFormat("ss");
             Date timeParse = timeSecond.parse(time);
             return timeSecond.format(timeParse);
-        } else return "Не правильные сукунды getSecond.";
+        } else return "CustomDateTime.getSecond: Не правильные сукунды.";
     }
 //Setters
     public void setHour(int hour) {
         if(CustomDateTime.validate(hour, minute, second)){
             this.hour = hour;
-        } else System.out.println("Не правильный час!");
+        } else System.out.println("CustomDateTime.setHour: Не правильный час!");
     }
 
     public void setMinute(int minute) {
         if(CustomDateTime.validate(hour, minute, second)){
             this.minute = minute;
-        } else System.out.println("Не правильные минуты!");
+        } else System.out.println("CustomDateTime.setMinute: Не правильные минуты!");
     }
 
     public void setSecond(int second) {
         if(CustomDateTime.validate(hour, minute, second)){
             this.second = second;
-        } else System.out.println("Не правильные секунды!");
+        } else System.out.println("CustomDateTime.setSecond: Не правильные секунды!");
     }
 
     @Override
