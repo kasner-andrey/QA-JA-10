@@ -31,7 +31,7 @@ public class CustomDateTimeExt extends CustomDateTime{
 
     public String getFormattedDate() throws ParseException {
         SimpleDateFormat formatMs = new SimpleDateFormat("SSS");
-        String time = ms + "";
+        String time = Integer.toString(ms);
         Date timeParse = formatMs.parse(time);
         String timeString = formatMs.format(timeParse);
         return super.getFormattedDate() + "." + timeString;
