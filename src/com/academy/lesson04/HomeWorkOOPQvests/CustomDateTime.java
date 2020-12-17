@@ -171,17 +171,18 @@ public class CustomDateTime extends CustomDate{
 
 //-* реализовать метод addSeconds(int seconds), который добавляет указанное кол-во секунд к текущей дате
     public void addSeconds(int seconds) throws ParseException {
-        int day = seconds / 86400;
-        if(day > 0) nextDate(day);
         int nextSecond = this.second + seconds;
-        String time = hour + ":" + minute + ":" + nextSecond;
-        SimpleDateFormat formatTime = new SimpleDateFormat("HH:mm:ss");
+        String timeDate = super.getFormattedDate() + " " + hour + ":" + minute + ":" + nextSecond;
+        SimpleDateFormat formatTime = new SimpleDateFormat("dd.MM.yyyy EEEE HH:mm:ss");
         formatTime.setLenient(true);
-        Date timeParse = formatTime.parse(time);
+        Date timeParse = formatTime.parse(timeDate);
         String timeString = formatTime.format(timeParse);
-        setHour(Integer.parseInt(timeString.substring(0, 2)));
-        setMinute(Integer.parseInt(timeString.substring(3, 5)));
-        setSecond(Integer.parseInt(timeString.substring(6)));
+        super.setDay(Integer.parseInt(timeString.substring(0, 2)));
+        super.setMonth(Integer.parseInt(timeString.substring(3, 5)));
+        super.setYear(Integer.parseInt(timeString.substring(6, 10)));
+        setSecond(Integer.parseInt(timeString.substring(timeString.length() - 2)));
+        setMinute(Integer.parseInt(timeString.substring(timeString.length() - 5, timeString.length() - 3)));
+        setHour(Integer.parseInt(timeString.substring(timeString.length() - 8, timeString.length() - 6)));
     }
 
     //Getters
