@@ -1,5 +1,6 @@
 package com.academy.lesson5.oop;
 
+import com.academy.lesson5.oop.Date.Gender;
 import com.academy.lesson5.oop.Person;
 
 import java.util.Arrays;
@@ -75,7 +76,7 @@ public class PersonMain {
         String firstName;
         String lastName;
         int age;
-        char gender;
+        Gender gender;
 
         for (int i = 0; i < arrRandomLastName.length; i++) {
             int maleOrFemale = (int) (Math.random() * 100);
@@ -83,12 +84,12 @@ public class PersonMain {
                 firstName = arrRandomFirstNameMale[(int) (Math.random() * 95)]; // arrRandomFirstNameMale.length = 95
                 lastName = arrRandomLastName[(int) (Math.random() * 99)]; // arrRandomLastName.length = 99
                 age = (int) (18 + Math.random() * 100); // от 18 до 118 лет возраст
-                gender = 'm';
+                gender = Gender.MALE;
             } else { //female
                 firstName = arrRandomFirstNameFemale[(int) (Math.random() * 100)]; // arrRandomFirstNameFemale.length = 100
                 lastName = arrRandomLastName[(int) (Math.random() * 99)]; // arrRandomLastName.length = 99
                 age = (int) (18 + Math.random() * 100); // от 18 до 118 лет возраст
-                gender = 'f';
+                gender = Gender.FEMALE;
             }
             personsArray[i] = new Person(firstName, lastName, age, gender);
             //System.out.print(" " + personsArray[i] + " "); // Ќе отображаетс€
@@ -122,7 +123,7 @@ public class PersonMain {
             lastName = value.getLastName();
             age = value.getAge();
             gender = value.getGender();
-            if (gender == 'f' && age >= 30 && age <= 40) {
+            if (gender == Gender.FEMALE && age >= 30 && age <= 40) {
                 System.out.println("******** Abonent **************");
 //                System.out.println(value.getProfile());
 //                System.out.println("-------------------------------");
