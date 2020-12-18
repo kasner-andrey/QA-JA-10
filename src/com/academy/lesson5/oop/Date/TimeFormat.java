@@ -28,10 +28,10 @@ public enum TimeFormat {
     }
 
     public String format(){
-        switch (this){
-            case H24: return "HH:mm:ss";
-            default: return "hh:mm:ssa";
+        if (this == TimeFormat.H24) {
+            return "HH:mm:ss";
         }
+        return "hh:mm:ssa";
     }
 
 
