@@ -1,6 +1,11 @@
 package com.academy.lesson06;
 
 public class Button extends Component {
+
+
+    public Button() {
+    }
+
     public Button(int xPosition, int yPosition, int width, int height, String text) {
         super.xPosition = xPosition;
         super.yPosition = yPosition;
