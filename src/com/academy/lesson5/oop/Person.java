@@ -22,18 +22,20 @@ package com.academy.lesson5.oop;
 ////	- вывести информацию о всех абонентах в массиве
 ////	- вывести только женщин, у которых возраст от 30 до 40 лет.
 
+import com.academy.lesson5.oop.Date.Gender;
+
 public class Person {
     private String firstName;
     private String lastName;
     private int age;
-    private char gender;
+    private Gender gender;
 
     //constructor
     public Person(){
         System.out.println("Not parameters");
     }
 
-    public Person(String firstName, String lastName, int age, char gender) {
+    public Person(String firstName, String lastName, int age, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -60,7 +62,7 @@ public class Person {
         return age;
     }
 
-    public char getGender() {
+    public Gender getGender() {
         return gender;
     }
 
@@ -79,7 +81,7 @@ public class Person {
         this.age = age;
     }
 
-    public void setGender(char gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 }
