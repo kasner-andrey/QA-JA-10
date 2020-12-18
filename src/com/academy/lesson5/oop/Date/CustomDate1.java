@@ -64,14 +64,38 @@ public class CustomDate1 {
     }
 //Вывыод даты с днем недели
     public String getFormattedDate() throws ParseException {
-            SimpleDateFormat formatDate = new SimpleDateFormat("dd.MM.yyyy");
-            SimpleDateFormat formatWeek = new SimpleDateFormat("EEEE");
-            String date = day + "." + month + "." + year;
-            Date dateParse = formatDate.parse(date);
-            String dateYear = formatDate.format(dateParse);
-            String weekDay = formatWeek.format(dateParse);
-            return dateYear + " " + weekDay;
+        DateFormat format = DateFormat.RU;
+        SimpleDateFormat formatDate = new SimpleDateFormat(format.format());
+        SimpleDateFormat formatWeek = new SimpleDateFormat("EEEE");
+        String date = day + "." + month + "." + year;
+        Date dateParse = formatDate.parse(date);
+        String dateYear = formatDate.format(dateParse);
+        String weekDay = formatWeek.format(dateParse);
+        return dateYear + " " + weekDay;
     }
+//a) Создать перечисление "Формат Даты" (DateFormat), в котором определить несколько форматов, например:
+//		- 	RU 			Россия						DD.MM.YYYY					24.01.2011
+//		- 	USA 		США							MM-DD-YYYY					01-24-2011
+//		-	ENG			Международный английский	DD-MM-YYYY					24-01-2011
+//		- 	UK			Великобритания				DD/MM/YYYY					24/01/2011
+//		-* 	CUSTOM		Пользовательский			DD <Название месяца> YYYYг	25 января 2011г
+//
+//	b) Модифицировать класс CustomDate из предыдущего занятия, для фозможности отображения даты в заданном формате:
+//		- public String getFormattedDate() {} // возвращает дату в формате по умолчанию - RU: 24.01.2011
+//		- public String getFormattedDate((DateFormat format){} // возвращает дату в заданном формате по образцу из задания а)
+//******************************************************************************************
+    public  String getFormattedDate(DateFormat format) throws ParseException {          //**
+        DateFormat formatRu = DateFormat.RU;                                            //**
+        SimpleDateFormat formatParse = new SimpleDateFormat(formatRu.format());         //**
+        SimpleDateFormat formatDate = new SimpleDateFormat(format.format());            //**
+        SimpleDateFormat formatWeek = new SimpleDateFormat("EEEE");              //**
+        String date = day + "." + month + "." + year;                                   //**
+        Date dateParse = formatParse.parse(date);                                       //**
+        String dateYear = formatDate.format(dateParse);                                 //**
+        String weekDay = formatWeek.format(dateParse);                                  //**
+        return dateYear + " " + weekDay;                                                //**
+    }                                                                                   //**
+//******************************************************************************************
 //Вывод дня недели
     public static String dayOfWeek(int day, int month, int year) throws ParseException {
         if(CustomDate1.validate(day, month, year)) {
