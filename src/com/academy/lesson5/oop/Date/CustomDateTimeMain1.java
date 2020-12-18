@@ -81,7 +81,7 @@ public class CustomDateTimeMain1 {
         System.out.println("***************** addSeconds() CustomDateTime *************************");
         CustomDateTime1 date4 = new CustomDateTime1(31, 12, 2020, 23, 59, 59);
         System.out.println("toString: " + date4);
-        date4.addSeconds(965456589);
+        date4.addSeconds(969559589);
         System.out.println(date4);
         System.out.println();
 
