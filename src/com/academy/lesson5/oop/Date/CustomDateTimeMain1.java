@@ -85,10 +85,34 @@ public class CustomDateTimeMain1 {
         System.out.println(date4);
         System.out.println();
 
-        System.out.println("***************** getFormattedDate(boolean isTimeFormat12) *****************************");
-        System.out.println(date4.getFormattedDate(true));
+        System.out.println("/////////////////////////////////////////////////////////////////////////////////////////");
+        //а) Создать перечисление "Формат времени" (TimeFormat), в котором определить следующие форматы:
+        //		- H12		12 часовой			HH:MM:SS (am|pm)	09:23:45am, 09:23:45pm
+        //		- H24		24 часовой			HH:MM:SS			09:23:45,	21:23:45
+        //
+        //	б)Модифицировать класс CustomDateTime из пред. занятия(ий), для возможности отображения времени в заданном формате:
+        //		- public String getFormattedDate() {} // возвращает дату и время в формате по умолчанию: 24.01.2011	21:23:45
+        //		- public String getFormattedDate(DateFormat dateFormat, TimeFormat format) {} // возвращает дату и время в заданном форматах
+
+        System.out.println();
+        System.out.println("*** getFormattedDate( FormatDate: RU, USA, ENG, UK, CUSTOM   -- 12H / 24H) *****");
+        System.out.println();
+        System.out.println("toString: " + date4);
+        System.out.println();
+        System.out.println("DateFormat: USA, TimeFormat: H12 -> " + date4.getFormattedDate(DateFormat.USA, TimeFormat.H12));
+        System.out.println("DateFormat: RU, TimeFormat: H24 -> " + date4.getFormattedDate(DateFormat.RU, TimeFormat.H24));
+        System.out.println();
+        CustomDateTime1 date16 = new CustomDateTime1(31, 12, 2020, 10, 59, 59);
+        System.out.println("toString: " + date16);
+        System.out.println();
+        System.out.println("DateFormat: ENG, TimeFormat: H12 -> " + date16.getFormattedDate(DateFormat.ENG, TimeFormat.H12));
+        System.out.println("DateFormat: UK, TimeFormat: H24 -> " + date16.getFormattedDate(DateFormat.UK, TimeFormat.H24));
+        System.out.println("DateFormat: CUSTOM, TimeFormat: H12 -> " + date16.getFormattedDate(DateFormat.CUSTOM, TimeFormat.H12));
         System.out.println();
 
+        System.out.println("/////////////////////////////////////////////////////////////////////////////////////////");
+
+        System.out.println();
         System.out.println("***************** getFormattedDate() CustomDateTimeExt ***************************");
         CustomDateTimeExt1 date5 = new CustomDateTimeExt1(31, 12, 2020, 23, 59, 59, 15);
         System.out.println(date5.getFormattedDate());

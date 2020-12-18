@@ -77,11 +77,12 @@ public class CustomDateTime1 extends CustomDate1 {
     }
 //Вывод даты и времени
     public String getFormattedDate() throws ParseException { //(переопределить из базового класса) который отображает время и дату: 25.01.2017 15:05:35
-            SimpleDateFormat formatTime = new SimpleDateFormat("HH:mm:ss");
-            String time = hour + ":" + minute + ":" + second;
-            Date timeParse = formatTime.parse(time);
-            String timeString = formatTime.format(timeParse);
-            return super.getFormattedDate() + " " + timeString;
+        TimeFormat timeFormat = TimeFormat.H24;
+        SimpleDateFormat formatTime = new SimpleDateFormat(timeFormat.format());
+        String time = hour + ":" + minute + ":" + second;
+        Date timeParse = formatTime.parse(time);
+        String timeString = formatTime.format(timeParse);
+        return super.getFormattedDate() + " " + timeString;
     }
 //Валидация
     public static boolean validate(int hour, int minute, int second){
@@ -97,33 +98,32 @@ public class CustomDateTime1 extends CustomDate1 {
         }
         return  true;
     }
+    //а) Создать перечисление "Формат времени" (TimeFormat), в котором определить следующие форматы:
+    //		- H12		12 часовой			HH:MM:SS (am|pm)	09:23:45am, 09:23:45pm
+    //		- H24		24 часовой			HH:MM:SS			09:23:45,	21:23:45
+    //
+    //	б)Модифицировать класс CustomDateTime из пред. занятия(ий), для возможности отображения времени в заданном формате:
+    //		- public String getFormattedDate() {} // возвращает дату и время в формате по умолчанию: 24.01.2011	21:23:45
+    //		- public String getFormattedDate(DateFormat dateFormat, TimeFormat format) {} // возвращает дату и время в заданном форматах
 //Вывод даты и времени 12 - 24 часа
-    public String getFormattedDate(boolean isTimeFormat12) throws ParseException {
-            SimpleDateFormat formatTime;
-            SimpleDateFormat formatParseTime = new SimpleDateFormat("HH:mm:ss");
-            if(isTimeFormat12){
-                formatTime = new SimpleDateFormat("hh:mm:ss a");
-            } else formatTime = new SimpleDateFormat("HH:mm:ss");
-            String time = hour + ":" + minute + ":" + second;
-            formatTime.setLenient(true);
-            Date timeParse = formatParseTime.parse(time);
-            String timeString = formatTime.format(timeParse);
-            return super.getFormattedDate() + " " + timeString;
+    public String getFormattedDate(DateFormat dateFormat, TimeFormat format) throws ParseException {
+        TimeFormat timeFormat = TimeFormat.H24;
+        SimpleDateFormat formatTime = new SimpleDateFormat(format.format());
+        SimpleDateFormat formatParseTime = new SimpleDateFormat(timeFormat.format());
+        String time = hour + ":" + minute + ":" + second;
+        formatTime.setLenient(true);
+        Date timeParse = formatParseTime.parse(time);
+        String timeString = formatTime.format(timeParse);
+        return super.getFormattedDate(dateFormat) + " " + timeString.toLowerCase();
     }
+    //****************************************************************************************************
+
 //Методы Next....
     public void nextSecond() throws ParseException {
         second++;
         if(second > 59){
-            minute++;
             second = 0;
-            if(minute > 59){
-                hour++;
-                minute = 0;
-                if(hour > 23){
-                    hour = 0;
-                    nextDate(1);
-                }
-            }
+            nextMinute();
         }
     }
 
@@ -131,12 +131,8 @@ public class CustomDateTime1 extends CustomDate1 {
     public void nextMinute() throws ParseException {
     minute++;
     if(minute > 59){
-        hour++;
         minute = 0;
-        if(hour > 23){
-            hour = 0;
-            nextDate(1);
-        }
+        nextHour();
     }
 }
 
