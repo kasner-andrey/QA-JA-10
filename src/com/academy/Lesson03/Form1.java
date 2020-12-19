@@ -10,7 +10,7 @@ import java.util.Random;
 
     //This program shows a series of dialog boxes one
 //after the other
-//Imports are listed in full to show what‚Äôs being used
+//Imports are listed in full to show whatís being used
 //could just import javax.swing.* and java.awt.* etc..
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -19,7 +19,7 @@ import javax.swing.Icon;
 import java.awt.EventQueue;
     class SimpleDialogFrame extends JFrame{
         //Using a standard Java icon
-        private Icon optionIcon = UIManager.getIcon("‚ÄúFileView.computerIcon‚Äù");
+        private Icon optionIcon = UIManager.getIcon("ìFileView.computerIconî");
         //Application start point
         public static void main(String[] args) {
 //Use the event dispatch thread for Swing components
@@ -36,7 +36,7 @@ import java.awt.EventQueue;
         {
 //make sure the program exits when the frame closes
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            setTitle("‚ÄúSimple Dialog Box Example‚Äù");
+            setTitle("ìSimple Dialog Box Exampleî");
             setSize(500,500);
 //This will center the JFrame in the middle of the screen
             setLocationRelativeTo(null);
@@ -45,42 +45,42 @@ import java.awt.EventQueue;
 //it makes to the position of the dialog box.
             setVisible(true);
 //Use the showMessageDialog method for a plain message dialog box
-            JOptionPane.showMessageDialog(this, "‚ÄúThis is the dialog message‚Äù"
-                    ,"‚ÄúThis is the dialog title‚Äù", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(this, "ìThis is the dialog messageî"
+                    ,"ìThis is the dialog titleî", JOptionPane.PLAIN_MESSAGE);
 //Use the showMessageDialog method for a error message dialog box
-            JOptionPane.showMessageDialog(this, "‚ÄúThis is the dialog message‚Äù"
-                    ,"‚ÄúThis is the dialog title‚Äù", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "ìThis is the dialog messageî"
+                    ,"ìThis is the dialog titleî", JOptionPane.ERROR_MESSAGE);
 //Use the showConfirmDialog method for a warning message dialog box
 //with OK, CANCEL buttons. Capture the button number with an int variable
-            int choice = JOptionPane.showConfirmDialog(this, "‚ÄúThis is the dialog message‚Äù"
-                    ,"‚ÄúThis is the dialog title‚Äù", JOptionPane.WARNING_MESSAGE
+            int choice = JOptionPane.showConfirmDialog(this, "ìThis is the dialog messageî"
+                    ,"ìThis is the dialog titleî", JOptionPane.WARNING_MESSAGE
                     , JOptionPane.OK_CANCEL_OPTION);
 //Use the showConfirmDialog method for an information message dialog box
 //with YES, NO, CANCEL buttons. It shows the button choice of previous
 //message box
-            JOptionPane.showConfirmDialog(this,"‚ÄúLast button pressed was number ‚Äù" + choice
-, "‚ÄúThis is the dialog title‚Äù", JOptionPane.INFORMATION_MESSAGE
+            JOptionPane.showConfirmDialog(this,"ìLast button pressed was number î" + choice
+, "ìThis is the dialog titleî", JOptionPane.INFORMATION_MESSAGE
                 , JOptionPane.YES_NO_CANCEL_OPTION);
 //The showOptionDialog method can be made to work as if it were the confirmDialog
 //method by using null for the last three parameters. In this case the options for
 //the button types (YES, NO, CANCEL) and the message type (INFORMATION_MESSAGE)
 //will be used.
-            JOptionPane.showOptionDialog(this, "‚ÄúThis is the dialog message‚Äù"
-                    , "‚ÄúThis is the dialog title‚Äù", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE
+            JOptionPane.showOptionDialog(this, "ìThis is the dialog messageî"
+                    , "ìThis is the dialog titleî", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE
                     ,null, null, null);
 //Use the showOptionDialog method to make a custom box. If the options parameter
 //is null the YES, NO, CANCEL buttons are used. Also notice that even though
 //the message type is INFORMATION_MESSAGE the usual icon is overriden by the one
 //provided.
-            JOptionPane.showOptionDialog(this, "‚ÄúThis is the dialog message‚Äù"
-                    , "‚ÄúThis is the dialog title‚Äù", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE
+            JOptionPane.showOptionDialog(this, "ìThis is the dialog messageî"
+                    , "ìThis is the dialog titleî", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE
                     ,optionIcon, null, null);
 //String array to be used for the buttons
-            String[] buttonOptions = new String[] {"‚ÄúHappy Button‚Äù", "‚ÄúSad Button‚Äù", "‚ÄúConfused Button‚Äù"};
+            String[] buttonOptions = new String[] {"ìHappy Buttonî", "ìSad Buttonî", "ìConfused Buttonî"};
 //If the options parameter is not null the YES, NO, CANCEL buttons are not used
 //The buttons are made with the object array - in this case a String array.
-            JOptionPane.showOptionDialog(this, "‚ÄúThis is the dialog message‚Äù"
-                    , "‚ÄúThis is the dialog title‚Äù", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE
+            JOptionPane.showOptionDialog(this, "ìThis is the dialog messageî"
+                    , "ìThis is the dialog titleî", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE
                     ,optionIcon, buttonOptions, buttonOptions[0]);
         }
     }
