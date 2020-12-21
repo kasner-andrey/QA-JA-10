@@ -1,9 +1,8 @@
 package com.academy.Lesson09.Component1;
 
-import com.academy.lesson06.Component.Component;
-
 public class Button extends Component {
     protected String text;
+
 
 
     public Button(String text) {
@@ -15,7 +14,10 @@ public class Button extends Component {
     }
 
     public Button() {
+    }
 
+    public String getProfile(){
+        return super.getProfile() + "\n" + text;
     }
 
     @Override
@@ -29,12 +31,6 @@ public class Button extends Component {
 
     @Override
     public String toString() {
-        return "Button{" +
-                "xPosition=" + xPosition +
-                ", yPosition=" + yPosition +
-                ", width=" + width +
-                ", height=" + height +
-                ", text='" + text + '\'' +
-                '}';
+        return getProfile();
     }
 }

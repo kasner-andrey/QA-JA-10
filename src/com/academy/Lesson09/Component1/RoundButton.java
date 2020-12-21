@@ -1,6 +1,6 @@
 package com.academy.Lesson09.Component1;
 
-import com.academy.lesson06.Component.Button;
+
 
 public class RoundButton extends Button {
 
@@ -11,6 +11,15 @@ public class RoundButton extends Button {
     public RoundButton(int xPosition, int yPosition, int width, int height, String text) {
         super(xPosition, yPosition, width, height, text);
     }
+
+    public String getProfile(){
+        return super.getProfile() + "\nRoundButton";
+    }
+
+//    @Override
+//    public void draw3D() {
+//        super.draw3D();
+//    }
 
     @Override
     public void draw() {
@@ -24,12 +33,6 @@ public class RoundButton extends Button {
 
     @Override
     public String toString() {
-        return "RoundButton{" +
-                "xPosition=" + xPosition +
-                ", yPosition=" + yPosition +
-                ", width=" + width +
-                ", height=" + height +
-                ", text='" + text + '\'' +
-                '}';
+        return getProfile();
     }
 }

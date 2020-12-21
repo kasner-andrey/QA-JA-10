@@ -1,14 +1,25 @@
 package com.academy.Lesson09.Component1;
 
-import com.academy.lesson06.Component.Component;
-
 public class label extends Component {
 
     public label() {
     }
 
+    @Override
+    public void draw3D() {
+        System.out.println("-----------------");
+        System.out.print("// ");
+        System.out.print("Label - draw3D");
+        System.out.println(" //");
+        System.out.println("------------------");
+    }
+
     public label(int xPosition, int yPosition, int width, int height, String text) {
         super(xPosition, yPosition, width, height, text);
+    }
+
+    public String getProfile(){
+        return super.getProfile() + "Label";
     }
 
     @Override
@@ -18,12 +29,6 @@ public class label extends Component {
 
     @Override
     public String toString() {
-        return "label{" +
-                "xPosition=" + xPosition +
-                ", yPosition=" + yPosition +
-                ", width=" + width +
-                ", height=" + height +
-                ", text='" + text + '\'' +
-                '}';
+        return getProfile();
     }
 }

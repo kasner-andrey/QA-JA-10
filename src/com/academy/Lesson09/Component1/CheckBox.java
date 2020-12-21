@@ -1,12 +1,15 @@
 package com.academy.Lesson09.Component1;
 
-import com.academy.lesson06.Component.Button;
-
 public class CheckBox extends Button {
     protected Boolean checked;
 
     public CheckBox() {
     }
+
+//    @Override
+//    public void draw3D() {
+//        System.out.println("draw3D(): CheckBox");
+//    }
 
     public CheckBox(Boolean checked) {
         this.checked = checked;
@@ -15,6 +18,10 @@ public class CheckBox extends Button {
     public CheckBox(int xPosition, int yPosition, int width, int height, String text, Boolean checked) {
         super(xPosition, yPosition, width, height, text);
         this.checked = checked;
+    }
+
+    public  String getProfile(){
+        return super.getProfile() + "\n" + checked;
     }
 
     @Override
@@ -33,14 +40,7 @@ public class CheckBox extends Button {
 
     @Override
     public String toString() {
-        return "CheckBox{" +
-                "checked=" + checked +
-                ", xPosition=" + xPosition +
-                ", yPosition=" + yPosition +
-                ", width=" + width +
-                ", height=" + height +
-                ", text='" + text + '\'' +
-                '}';
+        return getProfile();
     }
 }
 
