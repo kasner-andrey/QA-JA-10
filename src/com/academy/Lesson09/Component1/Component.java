@@ -18,11 +18,6 @@ public class Component implements VisualComponent {
     public Component() {
     }
 
-//    @Override
-//    public void draw3D() {
-//
-//    }
-
     @Override
     public void draw() {
         System.out.println("draw(): Component");
