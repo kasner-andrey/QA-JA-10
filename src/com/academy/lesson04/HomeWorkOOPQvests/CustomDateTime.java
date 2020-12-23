@@ -121,16 +121,8 @@ public class CustomDateTime extends CustomDate{
         if(flagValidation){
             second++;
             if(second > 59){
-                minute++;
                 second = 0;
-                if(minute > 59){
-                    hour++;
-                    minute = 0;
-                    if(hour > 23){
-                        hour = 0;
-                        nextDate(1);
-                    }
-                }
+                nextMinute();
             }
         }
     }
@@ -139,12 +131,8 @@ public class CustomDateTime extends CustomDate{
          if(flagValidation){
              minute++;
              if(minute > 59){
-                 hour++;
                  minute = 0;
-                 if(hour > 23){
-                     hour = 0;
-                     nextDate(1);
-                 }
+                 nextHour();
              }
          }
     }
