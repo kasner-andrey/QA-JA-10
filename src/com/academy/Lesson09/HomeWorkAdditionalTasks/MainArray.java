@@ -48,7 +48,12 @@ public class MainArray {
         System.out.println(array);
         //Где происходит добавление элемента в массив, массив проходит проверку на длинну и наличие значений null, и при отсутствии места соэдается новый массив.
 
+//2)** Создать метод
+//	String alignment(String str, int widht)
+//	который выравнивает заданную строку по ширине, растягивая пробелы
+//	(аналог выравнивания по ширине word)
 
+        System.out.println(array.alignment("ggf jdj jdj jjf f ggf fjf fd fdfdfs fd fd ffd ssa a", 100));
 
 
 

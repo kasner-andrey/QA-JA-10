@@ -136,5 +136,53 @@ public class ArrayExtImpl<array> implements ArrayExt {
         public int hashCode () {
             return Arrays.hashCode(array);
         }
+
+    String alignment(String str, int width) {//выравнивает заданную строку по ширине, растягивая пробелы
+        int space = 0;
+
+        int number1 = width - str.length();
+        System.out.println("number1 " + number1);
+
+        for (int i = 0; i < str.length(); i++) {
+            if(str.charAt(i) == ' ') space++;
+        }
+        System.out.println("space " + space);
+        int numb2 = number1/space;
+        System.out.println("numb2 " + numb2);
+        String spaces = "";
+        for (int i = 0; i <= numb2; i++) {
+            spaces += " ";
+        }
+        System.out.println("spases.length " + spaces.length());
+        String newString = "";
+        for (int i = 0; i < str.length(); i++){
+            if(str.charAt(i) == ' '){
+                newString += spaces;
+            } else newString += str.charAt(i);
+        }
+        System.out.println(str);
+        System.out.println(newString.length());
+        return newString;
     }
+
+
+
+
+//        String alignment(String str, int width){//выравнивает заданную строку по ширине, растягивая пробелы
+//        if(width <= str.length()) return "Ширина строки задана не верно!";
+//        String newString = "";
+//            for (int i = 0; width >= newString.length(); i++){
+//                for(int j = 0; j < str.length(); j++){
+//                    if(str.charAt(j) == ' '){
+//                        newString = newString + "  ";
+//                        if(width <= newString.length()) break;
+//                    } else newString += str.charAt(j);
+//                }
+//                str = newString;
+//                if(width <= newString.length()) break;
+//                else newString = "";
+//        }
+//            return newString;
+//    }
+}
 
