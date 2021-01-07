@@ -39,7 +39,7 @@ public class Task04 {
             //вызов диалогового окна для ввода формата числа пользователя
             String number = JOptionPane.showInputDialog("Введите свой формат числа например 8,265,459 ");
             System.out.print("Вы ввели " + number); // вывод в консоль введеннго числа
-            boolean mach = pattern4.matcher(number).find();
+            boolean mach = pattern4.matcher(number).matches();
             System.out.println(" <= Соответствие нужному формату (NNN,NNN,NNN) => " // вывод в консоль проверки формата числа
                     + mach);
         } else {//если нажата другая кнопка - "Произвести рандомный выбор форматов чисел"
@@ -52,7 +52,7 @@ public class Task04 {
             for(int i = 0; i < size4; i++){//цикл формирования чисел
                 StringBuilder formatNumber = numberFormat(); //вызов метода, где происходит формирование рандомного числа в рандомном формате
                 Matcher matcher = pattern4.matcher(formatNumber);
-                boolean insert4 = matcher.find(); //проверка на соответствие формату NNN,NNN,NNN
+                boolean insert4 = matcher.matches(); //проверка на соответствие формату NNN,NNN,NNN
                 String arrow4 = ""; // разделители для визуального отличия верных значений  (упрощение восприятия)
                 if(insert4) arrow4 = "   <=";
                 System.out.println(formatNumber + " => " + insert4 + arrow4); // собственно вывод сформированных значений
