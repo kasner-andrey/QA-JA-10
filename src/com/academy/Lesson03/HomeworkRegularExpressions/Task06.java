@@ -9,6 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Task06 {
+
     public static void main(String[] args) {
 
         System.out.println();
@@ -19,5 +20,6 @@ public class Task06 {
         String input = "This is 12345 321 is a hello a test not test   ";
         input = input.replaceAll(regex6, "$1 $2 <strong>$1</strong>");
         System.out.println(input);
+        input.equals(null);
     }
 }
