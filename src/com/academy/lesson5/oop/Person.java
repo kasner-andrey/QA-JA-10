@@ -41,6 +41,10 @@ public class Person {
         this.age = age;
         this.gender = gender;
     }
+
+    public Person(String vasya, String ivanov, int age, com.academy.Lesson09.HomeWork.TaskInterface.Gender male) {
+    }
+
     //methods
     public String getProfile(){
         String personInfo = this.firstName + "\n" + this.lastName + "\n" + this.age + "\n" + this.gender;
@@ -78,7 +82,18 @@ public class Person {
     }
 
     public void setAge(int age) {
+
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", gender=" + gender +
+                '}';
     }
 
     public void setGender(Gender gender) {
