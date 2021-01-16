@@ -50,20 +50,22 @@ public class Task01 {
         System.out.println();
 
         System.out.println("*************** Task 01 - E ****************");//	e) Отсортировать имена по алфавиту и вывести на экран
-        list.sort((l1, l2) -> {
-            if(l1.charAt(0) < l2.charAt(0)) return -1;
-            if(l1.charAt(0) > l2.charAt(0)) return 1;
-            return 0;
-        });
+        list.sort(String::compareTo);//это верно для алфавитного порядка не по первому символу а по всем символам
+//        list.sort((l1, l2) -> {
+//            if(l1.charAt(0) < l2.charAt(0)) return -1;
+//            if(l1.charAt(0) > l2.charAt(0)) return 1;
+//            return 0;
+//        });
         System.out.println("list.sort( Алфавитный порядок ): -> " + list);
         System.out.println();
 
         System.out.println("*************** Task 01 - F ****************");//	f) Отсортировать имена в обратном порядке и вывести имена на экран
-        list.sort((l1, l2) -> {
-            if(l1.charAt(0) < l2.charAt(0)) return 1;
-            if(l1.charAt(0) > l2.charAt(0)) return -1;
-            return 0;
-        });
+          list.sort((s1, s2) -> s2.compareTo(s1));//это верно для обратного порядка не по первому символу а по всем символам
+//        list.sort((l1, l2) -> {
+//            if(l1.charAt(0) < l2.charAt(0)) return 1;
+//            if(l1.charAt(0) > l2.charAt(0)) return -1;
+//            return 0;
+//        });
         System.out.println("list.sort( Обратный алфавитному порядку ): -> " + list);
         System.out.println();
 
